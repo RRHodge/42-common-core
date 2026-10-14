@@ -12,7 +12,7 @@ This repository contains my projects and exercises completed as part of the **42
 | :--- | :--- | :--- |
 | **Libft** | Writing my own C library (re-coding standard functions). | Completed ✅ |
 | **Get_Next_Line** | Reading a line from a file descriptor efficiently. | Completed ✅ |
-| **Push_swap** | Sorting data with a limited set of operations and two stacks. | In Progress 🔄 |
+| **Push_swap** | Sorting data with a limited set of operations and two stacks. | Completed ✅ |
 
 ## 🚀 About 42
 42 is a global education initiative that offers a peer-to-peer learning methodology, fostering creativity, collaboration, and rigorous problem-solving without traditional teachers or classrooms.
