@@ -1,0 +1,51 @@
+# ACROBATIC 3D MAP: THE NEGATIVE VOID & FLIP ARENA
+# Description: Une carte 3D avec des coordonnées négatives et des zones d'acrobaties extrêmes.
+
+nb_drones: 20
+
+# === ZONE 0: Le Point de Départ (Espace Neutre) ===
+start_hub: depart_central 0 0 0 [color=green max_drones=20]
+
+# === ZONE 1: L'Abysse Négatif (Coordonnées Négatives et Plongées) ===
+hub: abysse_alpha -5 -5 -20 [zone=restricted color=purple max_drones=4]
+hub: abysse_beta  -8 -2 -10 [zone=restricted color=purple max_drones=3]
+hub: abysse_gamma -3 -7 -50 [zone=restricted color=purple max_drones=2]
+
+# === ZONE 2: La Zone d'Acrobaties / Looping 3D ===
+# Les drones doivent effectuer des boucles et des changements d'altitude brusques
+hub: flip_loop_nord  -2 4 18  [zone=priority color=gold max_drones=5]
+hub: flip_loop_sud   -2 -4 -18 [zone=priority color=gold max_drones=5]
+hub: corkscrew_point -6 0 30  [zone=restricted color=crimson max_drones=2]
+
+# === ZONE 3: Le Goulet d'étranglement négatif ===
+hub: choke_neg1 -10 -5 -43 [color=orange max_drones=2]
+hub: choke_neg2 -12 -8 -46 [color=orange max_drones=1]
+
+# === ZONE 4: La Remontée et l'Arrivée ===
+hub: ascension_finale -1 0 80 [color=violet max_drones=10]
+end_hub: objectif_supreme 0 0 10 [color=rainbow max_drones=20]
+
+# === CONNEXIONS ET PARCOURS ACROBATIQUES ===
+
+# Départ vers l'abysse négatif
+connection: depart_central-abysse_alpha [max_link_capacity=4]
+connection: depart_central-abysse_beta [max_link_capacity=3]
+connection: abysse_alpha-abysse_gamma [max_link_capacity=2]
+
+# Entrée dans la zone de looping et d'acrobaties aériennes
+connection: abysse_beta-flip_loop_nord
+connection: abysse_gamma-flip_loop_sud
+connection: flip_loop_nord-corkscrew_point
+connection: flip_loop_sud-corkscrew_point
+
+# Passage par les profondeurs négatives extrêmes (Choke points)
+connection: abysse_beta-choke_neg1
+connection: choke_neg1-choke_neg2
+connection: choke_neg2-ascension_finale
+
+# Connexions acrobatiques vers la fin
+connection: corkscrew_point-ascension_finale
+connection: ascension_finale-objectif_supreme
+
+# Voie de secours hautement risquée (coûteuse)
+connection: choke_neg1-flip_loop_sud [max_link_capacity=1]
