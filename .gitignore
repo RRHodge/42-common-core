@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+*.o
+*.a
+build/
+objs/
+push_swap
