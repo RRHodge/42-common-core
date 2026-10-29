@@ -1,18 +1,19 @@
 # 42 Common Core
 
-This repository contains my projects and exercises completed as part of the **42 School** Common Core curriculum. 
+Projects completed during the **42 School Common Core**, organized by milestone in the same progression as the curriculum map.
 
-## 🛠️ Tech Stack & Skills
-* **Languages:** C, C++, Bash / Shell Scripting, python3
-* **Concepts:** Memory management, algorithms, system administration, process management, network basics.
+## Roadmap
 
-## 📁 Projects Overview
+| Milestone | Projects in this repository |
+| :--- | :--- |
+| [00](Milestone_00/README.md) | [Libft](Milestone_00/libft/) |
+| [01](Milestone_01/README.md) | [ft_printf](Milestone_01/ft_printf/), [get_next_line](Milestone_01/get_next_line/), [push_swap](Milestone_01/push_swap/) |
+| 02 | Not started |
+| [03](Milestone_03/README.md) | [fly-in](Milestone_03/fly_in/) |
 
-| Project | Description | Status |
-| :--- | :--- | :--- |
-| **Libft** | Writing my own C library (re-coding standard functions). | Completed ✅ |
-| **Get_Next_Line** | Reading a line from a file descriptor efficiently. | Completed ✅ |
-| **Push_swap** | Sorting data with a limited set of operations and two stacks. | Completed ✅ |
+## Skills
 
-## 🚀 About 42
-42 is a global education initiative that offers a peer-to-peer learning methodology, fostering creativity, collaboration, and rigorous problem-solving without traditional teachers or classrooms.
+- **Languages:** C, Python, Bash
+- **Core concepts:** memory management, algorithms, data structures, processes, networking and system administration
+
+Each project keeps its own source code, build files and documentation so it can be built and evaluated independently.
