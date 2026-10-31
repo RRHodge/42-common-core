@@ -1,0 +1,64 @@
+# Python bytecode and packaging
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+wheels/
+*.egg
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# Virtual environments (project and the provided SDK)
+.venv/
+venv/
+env/
+ENV/
+__pypackages__/
+
+# uv / Hugging Face / other large caches (regenerated)
+.cache/
+.uv-cache/
+
+# Test, type-checking and lint caches
+.pytest_cache/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+*~
+
+# Local secrets (keep an optional .env.example tracked)
+.env
+.env.*
+!.env.example
+
+# OS / editor metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+
+# `uv.lock` is committed on purpose for reproducible installs.
+# `data/output/` is also kept on purpose: function_calling_results.json is a
+# deliverable. Uncomment the next line if you prefer not to commit the results.
+# data/output/*.json

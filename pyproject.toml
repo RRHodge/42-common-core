@@ -1,0 +1,52 @@
+[project]
+name = "call-me-maybe"
+version = "1.0.0"
+description = "Function calling with a small language model, enforced by FSM-constrained decoding."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "pydantic>=2.5",
+    "torch>=2.1",
+    "transformers>=4.51",
+    "llm-sdk",
+]
+
+# `llm_sdk/` is a local uv project provided with the subject (it has its own
+# pyproject.toml and uv.lock). Declaring it as an editable path dependency is
+# what makes `from llm_sdk import Small_LLM_Model` work inside `uv run`.
+[tool.uv.sources]
+llm-sdk = { path = "llm_sdk", editable = true }
+[tool.uv]
+package = false
+default-groups = ["dev"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "flake8>=7",
+    "mypy>=1.10",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+explicit_package_bases = true
+mypy_path = "."
+ignore_missing_imports = true
+warn_unused_ignores = true
+exclude = [
+    "^llm_sdk/",
+    "^\\.venv/",
+    "^\\.cache/",
+]
+
+# The provided SDK has no type stubs: do not let mypy analyze its internals.
+[[tool.mypy.overrides]]
+module = "llm_sdk"
+follow_imports = "skip"
